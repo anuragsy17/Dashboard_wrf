@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Members } from '../mock';
-
+import {Multiselect} from 'multiselect-react-dropdown'
 
 class Email extends Component {
     state = {}
     render() {
+        const option = Members
         return (
             <>
                 <form action="" className='email_form'>
@@ -15,14 +16,15 @@ class Email extends Component {
                     </div>
                     <div className='to_div'>
                         <label htmlFor="" className='email_label'>To:
-                            <select name="" id="" className='select_input' multiple>
+                            {/* <select name="" id="" className='select_input' multiple="multiple">
                                 <option value="select">select</option>
                                 {Members.map((m) => {
                                     return (
                                         <option value={m.name}>{m.name}</option>
                                     )
                                 })}
-                            </select>
+                            </select> */}
+                                <Multiselect options={option} displayValue='name'/>
                         </label>
                     </div>
                     <div className='subject_div'>
